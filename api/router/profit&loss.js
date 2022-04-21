@@ -22,12 +22,12 @@ router.post("/profit&loss", async (req, res) => {
         Selling_Price: Selling_Price,
         Cost_Price: Cost_Price,
         Loss: loss,
-        Loss_in_percent: Loss_in_percent,
+        Loss_in_percent: loss_percent,
         User_ID: User_ID,
       };
       const data2 = new PL(data);
       await data2.save();
-      res.send(data2);
+      res.send(data);
     }
   } catch (e) {
     error(res, e);
